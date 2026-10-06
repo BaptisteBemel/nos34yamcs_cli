@@ -576,7 +576,7 @@
                     <connection>
                         <name>fsw</name>
                         <ip>nos-fsw</ip>
-                        <ci-port>5012</ci-port>
+                        <ci-port>5010</ci-port>
                         <to-port>5011</to-port>
                         <radio-port>5015</radio-port>
                     </connection>

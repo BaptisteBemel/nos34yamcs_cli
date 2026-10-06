@@ -30,5 +30,8 @@ add_definitions(-DBYTE_ORDER_LE)
 add_definitions(-D_LINUX_OS_)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-set(CI_TRANSPORT udp_tf)
+#set(CI_TRANSPORT udp_tf)
+# Clear CCSDS TC Transfer Frames over UDP.
+# This profile decapsulates TCTFs with IO_LIB without applying SDLS/CryptoLib.
+set(CI_TRANSPORT udp_tf_clear)
 set(TO_TRANSPORT udp_tf) # Note udp_tf used for Transfer Frames required for CryptoLib

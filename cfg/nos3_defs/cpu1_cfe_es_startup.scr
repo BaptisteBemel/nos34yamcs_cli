@@ -6,7 +6,7 @@ CFE_APP, sch,                       SCH_AppMain,              SCH,              
 CFE_APP, ci,                        CI_AppMain,               CI,               41, 16384, 0x0, 0;
 CFE_APP, to,                        TO_AppMain,               TO,               42, 32768, 0x0, 0;
 
-CFE_APP, ci_lab,                    CI_Lab_AppMain,           CI_LAB_APP,       80, 16384, 0x0, 0;
+
 CFE_APP, to_lab,                    TO_LAB_AppMain,           TO_LAB_APP,       81, 32768, 0x0, 0;
 
 !
@@ -68,3 +68,9 @@ Other  Notes:
    vxWorks = .o ( ci.o )
    RTEMS with S-record Loader = .s3r ( ci.s3r )
    RTEMS with CEXP Loader = .o ( ci.o )
+
+!Mission change: CI_LAB startup entry removed.
+!All external telecommands must use the selected CI transport on UDP 5010.
+!This prevents the raw-packet input on UDP 5012 from bypassing the
+!clear-TCTF or SDLS receiver selected for the experiment.
+#CFE_APP, ci_lab,                    CI_Lab_AppMain,           CI_LAB_APP,       80, 16384, 0x0, 0;
